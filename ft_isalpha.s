@@ -1,31 +1,35 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_isdigit.s                                       :+:      :+:    :+:    #
+#    ft_isalpha.s                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/03/25 15:55:48 by alaulom           #+#    #+#              #
-#    Updated: 2015/03/25 18:27:33 by alaulom          ###   ########.fr        #
+#    Created: 2015/03/25 18:14:47 by alaulom           #+#    #+#              #
+#    Updated: 2015/03/25 18:34:25 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-;int		ft_isdigit(int c);
+;int		ft_isalpha(int c);
 
-global	_ft_isdigit
+global	_ft_isalpha
 
-section .text
+setion .text
 
-_ft_isdigit:
-		cmp			rdi, '0'
-		jl			_retf
-		cmp			rdi, '9'
-		jg			_retf
+_ft_isalpha:
+		cmp		rdi, 'A'
+		jl		_retf
+		cmp		rdi, 'z'
+		jg		_retf
+		cmp		rdi, 'Z'
+		jle		_ret
+		cmp		rdi, 'a'
+		jge		_ret
 
-_ret:
-		mov			rax, 1
+_retf:
+		mov		rax, 0
 		ret
 
-_retf
-		mov			rax, 0
+_ret:
+		mov		rax, 1
 		ret

@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/25 16:30:16 by alaulom           #+#    #+#              #
-#    Updated: 2015/03/25 18:00:40 by alaulom          ###   ########.fr        #
+#    Updated: 2015/03/25 18:27:22 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ section .text
 
 _ft_ascii:
 		cmp		rdi, 'nul'
-		jc		retf
+		jc		_retf
 		cmp		rdi, 'del'
-		ja		retf
+		ja		_retf
 		
 _ret:
 		mov		rax, 1
