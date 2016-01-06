@@ -1,35 +1,30 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_isalpha.s                                       :+:      :+:    :+:    #
+#    ft_toupper.s                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/03/25 18:14:47 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/06 13:18:00 by alaulom          ###   ########.fr        #
+#    Created: 2016/01/06 15:15:15 by alaulom           #+#    #+#              #
+#    Updated: 2016/01/06 16:23:56 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-;int		ft_isalpha(int c);
+;int		ft_toupper(int c);
 
-global	_ft_isalpha
+gobal _ft_toupper
 
 section .text
 
-_ft_isalpha:
-		cmp		rdi, 'A'
-		jl		_retf
-		cmp		rdi, 'z'
-		jg		_retf
-		cmp		rdi, 'Z'
-		jle		_ret
-		cmp		rdi, 'a'
-		jge		_ret
-
-_retf:
-		mov		rax, 0
-		ret
+_ft_toupper:
+		if1:	cmp		rdi, 'a'
+				jge		endif1
+				cmp		rdi, 'z'
+				jle		endif1
+				sub		rdi, 32
+		endif1:
 
 _ret:
-		mov		rax, 1
+		mov		rax, rdi
 		ret
+

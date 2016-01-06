@@ -1,35 +1,31 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_isalpha.s                                       :+:      :+:    :+:    #
+#    ft_isprint.s                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/03/25 18:14:47 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/06 13:18:00 by alaulom          ###   ########.fr        #
+#    Created: 2016/01/06 14:50:31 by alaulom           #+#    #+#              #
+#    Updated: 2016/01/06 15:03:14 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-;int		ft_isalpha(int c);
+;int		ft_isprint(int c);
 
-global	_ft_isalpha
+gobal _ft_isprint
 
 section .text
 
-_ft_isalpha:
-		cmp		rdi, 'A'
-		jl		_retf
-		cmp		rdi, 'z'
-		jg		_retf
-		cmp		rdi, 'Z'
-		jle		_ret
-		cmp		rdi, 'a'
+_ft_isprint:
+		cmp		rdi, 040
 		jge		_ret
+		cmp		rdi, 0176
+		jle		_ret
 
-_retf:
+_retf
 		mov		rax, 0
 		ret
 
-_ret:
-		mov		rax, 1
+_ret
+		mov		rax, 0
 		ret
