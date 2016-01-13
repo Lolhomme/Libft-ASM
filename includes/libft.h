@@ -6,7 +6,7 @@
 /*   By: alaulom <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 16:48:43 by alaulom           #+#    #+#             */
-/*   Updated: 2016/01/13 17:01:11 by alaulom          ###   ########.fr       */
+/*   Updated: 2016/01/13 17:04:13 by alaulom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,8 @@ int		ft_toupper(int c);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 size_t 	ft_strlen(const char *s);
-char	*ft_strdup(const char 8s1);
+char	*ft_strdup(const char *s1);
+
+/*Part 3*/
+
+void	ft_cat(int fd);
