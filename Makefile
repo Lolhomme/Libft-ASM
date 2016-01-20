@@ -1,63 +1,48 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile2                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/01/19 14:33:30 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/19 16:58:30 by alaulom          ###   ########.fr        #
+#    Created: 2016/01/20 12:41:35 by alaulom           #+#    #+#              #
+#    Updated: 2016/01/20 14:54:24 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= libfts.a
+NAME	= libfts.a
 
-OBJDIR		= .objects
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror
+NC		= nasm
+NFLAGS	= -f macho64
 
-SRCDIR		= src
+SRC		= ft_bzero.s ft_cat.s ft_isalnum.s ft_isascii.s ft_isalpha.s \
+		  ft_isdigit.s ft_isprint.s ft_memcpy.s ft_memset.s ft_puts.s \
+		  ft_strcat.s ft_strdup.s ft_strlen.s ft_tolower.s ft_toupper.s
 
-SRC			= ft_bzero.s ft_cat.s ft_isalnum.s ft_isalpha.s ft_isascii.s \
-			  ft_isdigit.s ft_isprint.s ft_memcpy.s ft_memset.s ft_puts.s \
-			  ft_strcat.s ft_strdup.s ft_strlen.s ft_tolower.s ft_toupper.s
-
-INCLUDES	= includes
-
-CC			= nasm
-
-OBJ			= $(patsubst %.s, $(OBJDIR)/%.o, $(SRC))
-
-PREFIX		=
-
-UNAME		:= $(shell uname)
-
-ifeq ($(UNAME), Linux)
-	-f += elf64
-	PREFIX = dLINUX=1
-else
-	-f += macho64
-	PREFIX = --prefix _ -dOSX=1
-endif
+OBJ		= $(SRC:.s=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJ)
-		 ar rc $(NAME) $(OBJ)
-		 @echo "ASM win!"
+$(NAME): $(OBJ)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
+	@echo "ASM win!"
 
-$(OBJDIR)/%.o:  $(addprefix $(SRCDIR)/, %.s)
-	$(cc) -f -o $(PREFIX) $^ -I $(INCLUDES)
-
-$(OBJDIR): 
-	mkdir -p $(OBJDIR)
-
-test:
-	gcc -o test main.c $(NAME) -I $(INCLUDES)
+%.o: %.s
+	$(NC) -I includes/ -o $@ -s $? $(NFLAGS)
 
 clean:
 	@rm -f $(OBJ)
 
-fclean: clean
-	@rm -rf $(OBJDIR)
+fclean:
 	@rm -f $(NAME)
 
 re: fclean all
+
+test: $(NAME) main.c
+	gcc -I . main.c libfts.a
+	./a.out
+
+.PHONY: all clean fclean re
