@@ -6,13 +6,13 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/06 15:15:15 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/06 16:23:56 by alaulom          ###   ########.fr        #
+#    Updated: 2016/01/20 17:12:13 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ;int		ft_toupper(int c);
 
-gobal _ft_toupper
+global _ft_toupper
 
 section .text
 
