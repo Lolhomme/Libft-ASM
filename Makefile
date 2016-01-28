@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/20 12:41:35 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/28 14:07:24 by alaulom          ###   ########.fr        #
+#    Updated: 2016/01/28 14:35:06 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,12 @@ OBJ		= $(SRC:.s=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
 	@echo "ASM win!"
 
 %.o: %.s
-	$(NC) -I includes/ -o $@ -s $? $(NFLAGS)
+	@$(NC) -I includes/ -o $@ -s $? $(NFLAGS)
 
 clean:
 	@rm -f $(OBJ)
@@ -43,7 +43,7 @@ fclean: clean
 re: fclean all
 
 test: $(NAME) main.c
-	gcc -I . main.c libfts.a
-	./a.out
+	@gcc -I . main.c libfts.a
+	@./a.out
 
 .PHONY: all clean fclean re
