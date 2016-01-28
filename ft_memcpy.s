@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/20 16:25:39 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/20 16:32:49 by alaulom          ###   ########.fr        #
+#    Updated: 2016/01/28 12:14:11 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ _ft_memcpy:
 _cpy:
 		cmp		rdx, 0
 		je		_ret
-		mov		rcx, rdx
-		cld
+
 		movsb
+		dec		rdx
 		jmp		_cpy
 
 _ret:

@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/25 10:41:44 by alaulom           #+#    #+#              #
-#    Updated: 2015/03/25 13:28:38 by alaulom          ###   ########.fr        #
+#    Updated: 2016/01/28 12:10:29 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,12 @@ global	_ft_bzero
 section .text
 
 _ft_bzero:
-		push rdi
+		push	rdi
+		mov 	rcx, rsi
+		mov		rax, 0
 
+		cld
+		rep		stosb
+
+		pop		rax
 		ret
