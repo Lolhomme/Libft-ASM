@@ -6,7 +6,7 @@
 /*   By: alaulom <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 16:48:43 by alaulom           #+#    #+#             */
-/*   Updated: 2016/01/28 16:01:43 by alaulom          ###   ########.fr       */
+/*   Updated: 2016/01/28 16:55:48 by alaulom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	ft_cat(int fd);
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_isspace(int c);
+void	ft_putchar(char c);
 
 #endif
