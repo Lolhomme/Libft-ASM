@@ -6,7 +6,7 @@
 /*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 19:19:02 by aalliot           #+#    #+#             */
-/*   Updated: 2016/01/28 12:30:46 by alaulom          ###   ########.fr       */
+/*   Updated: 2016/01/28 14:09:09 by alaulom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -280,7 +280,7 @@ void		check_cat(void)
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isspace(0));
 	printf("[------] END OF FT_ISSPACE [------]\n");
-}
+}*/
 
 void		check_isupper(void)
 {
@@ -314,7 +314,7 @@ void		check_islower(void)
 	printf("[------] END OF FT_ISLOWER [------]\n");
 }
 
-void		check_putchar(void)
+/*void		check_putchar(void)
 {
 	printf("[------] FT_PUTCHAR [------]\n");
 	ft_putchar('a');
@@ -441,12 +441,12 @@ int			main(void)
 	check_strchr();
 	printf("\n");
 	check_isspace();
-	printf("\n");
+	printf("\n");*/
 	check_isupper();
 	printf("\n");
 	check_islower();
 	printf("\n");
-*/
+
 	printf("[------] END OF TESTS [------] \n");
 	return 0;
 }

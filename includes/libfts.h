@@ -6,7 +6,7 @@
 /*   By: alaulom <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/13 16:48:43 by alaulom           #+#    #+#             */
-/*   Updated: 2016/01/20 15:00:37 by alaulom          ###   ########.fr       */
+/*   Updated: 2016/01/28 14:06:28 by alaulom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,10 @@ char	*ft_strdup(const char *s1);
 /*Part 3*/
 
 void	ft_cat(int fd);
+
+/*BONUS*/
+
+int		ft_islower(int c);
+int		ft_isupper(int c);
 
 #endif
