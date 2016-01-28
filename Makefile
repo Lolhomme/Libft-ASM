@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/20 12:41:35 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/20 17:13:03 by alaulom          ###   ########.fr        #
+#    Updated: 2016/01/28 11:22:02 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJ)
 clean:
 	@rm -f $(OBJ)
 
-fclean:
+fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
