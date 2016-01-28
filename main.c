@@ -6,7 +6,7 @@
 /*   By: aalliot <aalliot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 19:19:02 by aalliot           #+#    #+#             */
-/*   Updated: 2016/01/28 14:09:09 by alaulom          ###   ########.fr       */
+/*   Updated: 2016/01/28 17:14:40 by alaulom          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,7 +265,7 @@ void		check_cat(void)
 
 // /* BONUS */
 //
-/*void		check_isspace(void)
+void		check_isspace(void)
 {
 	printf("[------] FT_ISSPACE [------]\n");
 	printf("[+] Test on %c, return = %d [+]\n", 'a', ft_isspace('a'));
@@ -280,7 +280,7 @@ void		check_cat(void)
 	printf("[-] Test with NULL [-]\n");
 	printf("[+] Test return = %d [+]\n", ft_isspace(0));
 	printf("[------] END OF FT_ISSPACE [------]\n");
-}*/
+}
 
 void		check_isupper(void)
 {
@@ -314,7 +314,7 @@ void		check_islower(void)
 	printf("[------] END OF FT_ISLOWER [------]\n");
 }
 
-/*void		check_putchar(void)
+void		check_putchar(void)
 {
 	printf("[------] FT_PUTCHAR [------]\n");
 	ft_putchar('a');
@@ -325,7 +325,7 @@ void		check_islower(void)
 	printf("[------] END OF FT_PUTCHAR [------]\n");
 }
 
-void		check_putchar_fd(void)
+/*void		check_putchar_fd(void)
 {
 	dprintf(2, "[------] FT_PUTCHAR_FD [------]\n");
 	ft_putchar_fd('a', 2);
@@ -346,7 +346,7 @@ void		check_puts_fd(void)
 	dprintf(2, "[-] Test with null [-]\n");
 	ft_puts_fd(NULL, 2);
 	dprintf(2, "[------] END OF FT_PUTS_FD [------]\n");
-}
+}*/
 
 void		check_putstr(void)
 {
@@ -360,7 +360,7 @@ void		check_putstr(void)
 	printf("[------] END OF FT_PUTSTR [------]\n");
 }
 
-void		check_putstr_fd(void)
+/*void		check_putstr_fd(void)
 {
 	dprintf(2, "[------] FT_PUTSTR_FD [------]\n");
 	ft_putstr_fd("[+] a [+]\n", 2);
@@ -426,22 +426,22 @@ int			main(void)
 	check_cat();
 	printf("\n");
 
-/*	// BONUS
+	// BONUS
 	printf("[------] BONUS [------] \n");
 	check_putchar();
 	printf("\n");
-	check_putchar_fd();
+/*	check_putchar_fd();
 	printf("\n");
 	check_puts_fd();
-	printf("\n");
+	printf("\n");*/
 	check_putstr();
 	printf("\n");
-	check_putstr_fd();
+/*	check_putstr_fd();
 	printf("\n");
 	check_strchr();
-	printf("\n");
-	check_isspace();
 	printf("\n");*/
+	check_isspace();
+	printf("\n");
 	check_isupper();
 	printf("\n");
 	check_islower();
