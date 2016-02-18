@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/20 12:41:35 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/28 17:09:37 by alaulom          ###   ########.fr        #
+#    Updated: 2016/02/18 16:02:15 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libfts.a
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
-NC		= nasm
+NC		= ~/.brew/bin/nasm
 NFLAGS	= -f macho64
 
 SRC		= ft_bzero.s ft_cat.s ft_isalnum.s ft_isascii.s ft_isalpha.s \
