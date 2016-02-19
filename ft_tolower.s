@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/06 16:24:27 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/19 14:42:30 by alaulom          ###   ########.fr        #
+#    Updated: 2016/02/19 17:41:43 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,11 @@ global _ft_tolower
 section .text
 
 _ft_tolower:
-		if1:	cmp		rdi, 'A'
-				jge		endif1
-				cmp		rdi, 'Z'
-				jle		endif1
-				add		rdi, 32
-		endif1:
+		cmp		rdi, 'A'
+		jl		_ret
+		cmp		rdi, 'Z'
+		jg		_ret
+		add		rdi, 32
 
 _ret:
 		mov		rax, rdi

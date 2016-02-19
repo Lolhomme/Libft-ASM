@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/03/25 16:30:16 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/28 12:27:02 by alaulom          ###   ########.fr        #
+#    Updated: 2016/02/19 16:09:09 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ global	_ft_isascii
 section .text
 
 _ft_isascii:
-		cmp		rdi, 'nul'
+		cmp		rdi, 0
 		jc		_retf
-		cmp		rdi, 'del'
+		cmp		rdi, 127
 		ja		_retf
 		
 _ret:

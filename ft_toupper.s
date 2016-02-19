@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/06 15:15:15 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/20 17:12:13 by alaulom          ###   ########.fr        #
+#    Updated: 2016/02/19 17:42:30 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,11 @@ global _ft_toupper
 section .text
 
 _ft_toupper:
-		if1:	cmp		rdi, 'a'
-				jge		endif1
-				cmp		rdi, 'z'
-				jle		endif1
-				sub		rdi, 32
-		endif1:
+		cmp		rdi, 'a'
+		jl		_ret
+		cmp		rdi, 'z'
+		jg		_ret
+		sub		rdi, 32
 
 _ret:
 		mov		rax, rdi
