@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 12:48:23 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/20 17:11:14 by alaulom          ###   ########.fr        #
+#    Updated: 2016/02/20 14:42:15 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,20 @@ _ft_strlen:
 		je		_null
 
 _count:
-		cmp		byte[rdi], 0
+		cmp		rdi, 0
 		je		_ret
-		inc		rdi
-		inc		rax
-		jmp		_count
+		mov		rax, 0
+		mov		rcx, -1
+		
+		cld
+		repnz	scasb
+
+		not		rcx
+		lea		rax, [rcx - 1]
+
+_ret:
+		ret
 
 _null:
 		mov		rax, 0
-		ret
-
-_ret:
 		ret
