@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/20 16:25:39 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/28 12:14:11 by alaulom          ###   ########.fr        #
+#    Updated: 2016/02/20 15:42:33 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,8 @@ section .text
 
 _ft_memcpy:
 		push	rdi
-
-_cpy:
-		cmp		rdx, 0
-		je		_ret
-
-		movsb
-		dec		rdx
-		jmp		_cpy
-
-_ret:
+		mov		rcx, rdx
+		cld
+		rep		movsb
 		pop		rax
 		ret
