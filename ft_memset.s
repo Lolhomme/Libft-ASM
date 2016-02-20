@@ -6,7 +6,7 @@
 #    By: alaulom <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/01/11 15:10:40 by alaulom           #+#    #+#              #
-#    Updated: 2016/01/28 12:27:40 by alaulom          ###   ########.fr        #
+#    Updated: 2016/02/20 15:19:27 by alaulom          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ section .text
 
 _ft_memset:
 		push	rdi
-		mov		rcx, rdx
 		mov		rax, rsi
+		mov		rcx, rdx
 
 		cld
 		rep		stosb
